@@ -1,3 +1,4 @@
+// src/app/events/page.tsx
 const events = [
   {
     title: 'AI Hackathon 2025',
@@ -28,19 +29,19 @@ export default function EventsPage() {
   const past = events.filter((e) => !isUpcoming(e.date));
 
   return (
-    <div className="space-y-10">
+    <div className="min-h-screen space-y-10 bg-[var(--background)] text-[var(--foreground)] px-6 py-10">
       <section>
         <h2 className="text-2xl font-semibold mb-4">Upcoming Events</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {upcoming.map((event, i) => (
-            <div key={i} className="border p-4 rounded shadow bg-white">
+            <div key={i} className="border border-[var(--highlight)] p-4 rounded shadow bg-[var(--muted)]">
               <h3 className="text-xl font-bold">{event.title}</h3>
-              <p className="text-sm text-gray-500">{event.date}</p>
+              <p className="text-sm opacity-80">{event.date}</p>
               <p className="mt-2">{event.description}</p>
               <a
                 href={event.link}
                 target="_blank"
-                className="inline-block mt-3 bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700"
+                className="inline-block mt-3 bg-[var(--foreground)] text-[var(--background)] px-4 py-1 rounded hover:opacity-90"
               >
                 Register
               </a>
@@ -53,9 +54,9 @@ export default function EventsPage() {
         <h2 className="text-2xl font-semibold mb-4">Past Events</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {past.map((event, i) => (
-            <div key={i} className="border p-4 rounded shadow bg-gray-50">
+            <div key={i} className="border border-[var(--highlight)] p-4 rounded shadow bg-[var(--muted)]">
               <h3 className="text-xl font-bold">{event.title}</h3>
-              <p className="text-sm text-gray-500">{event.date}</p>
+              <p className="text-sm opacity-80">{event.date}</p>
               <p className="mt-2">{event.description}</p>
             </div>
           ))}
