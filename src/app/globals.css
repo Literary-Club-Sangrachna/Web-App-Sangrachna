@@ -1,21 +1,30 @@
 @import "tailwindcss";
 
+/* 🎨 Custom Maroon Theme Palette */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #2c0005;      /* Darkest shade for background */
+  --foreground: #ffffff;      /* White text for readability */
+  --primary:   #6b0014;       /* Main maroon */
+  --secondary: #8c0020;       /* Accent maroon */
+  --muted:     #4e0010;       /* Slightly darker accent */
+  --highlight: #3a000a;       /* Hover/border */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-highlight: var(--highlight);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1c0004;
+    --foreground: #fefefe;
   }
 }
 
